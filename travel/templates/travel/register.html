@@ -1,0 +1,27 @@
+{% extends 'travel/index.html' %}
+
+{% block title %} Register {% endblock %}
+
+
+{% block content %}
+
+<h1>Register</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="cars">Choose a Group:</label>
+    <select id="groups" name="group">
+        <option disabled selected value> -- select an option -- </option>
+        {% for group in groups %}
+
+        <option value="{{group}}">{{group}}</option>
+
+        {% endfor %}
+    </select>
+    {{form.as_p}}
+    <br><br>
+    <input type="submit" value="Register">
+</form>
+
+
+
+{% endblock %}

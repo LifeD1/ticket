@@ -1,0 +1,32 @@
+{% extends 'travel/index.html' %}
+
+{% block title %} Agencies {% endblock %}
+
+
+{% block content %}
+
+<h1>Agency List</h1>
+
+    
+{% for agency in agencies %}
+    <ul>
+        <li>{{agency}}</li>
+
+        <ol>
+            {%for bus in buses %}
+                {% if bus.agency_id == agency%}
+                <li>{{ bus.bus_number }}</li>
+                {% endif %}
+
+            {% endfor%}
+        </ol>
+    </ul>
+        
+            
+{% endfor %}
+
+
+
+
+
+{% endblock %}
