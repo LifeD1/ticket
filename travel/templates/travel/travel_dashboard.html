@@ -1,0 +1,23 @@
+{% extends 'travel/index.html' %}
+
+{% block title %} Dashboard 1 {% endblock %}
+
+
+{% block content %}
+
+<h1>Dashboard 1</h1>
+
+<a href="{% url 'add-agency' %}">Add Agency</a> <br><br>
+<a href="{% url 'add-agency-admin' %}">Add Agency Admin</a> <br><br>
+<a href="{% url 'agencies' %}">Agency List</a> <br>
+
+<br>
+{% for group in groups %}
+
+<p>{{group}}</p>
+
+{% endfor %}
+
+
+
+{% endblock %}
